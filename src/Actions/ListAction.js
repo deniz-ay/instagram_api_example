@@ -5,7 +5,6 @@ export const getList = (params) => {
     return (dispatch) => {
                 Get(
                   BASE_URL.concat('/api/characters'),
-                  params,
                   dispatch,
                   LIST_START,
                   LIST_SUCCES,

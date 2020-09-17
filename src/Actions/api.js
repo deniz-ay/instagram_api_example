@@ -25,11 +25,7 @@ export const Post = (url,params,dispatch,start,succes,faild) => {
         
       }).then((response) => {
       
-        dispatch({
-          
-          type:succes,
-          payload:response.data
-        });
+        dispatch({  type: success, payload: method == 'removeCharacter' ?  params.id : response.data  })
         if(method=='login' || method=='register'){
           USERS.token=response.data.token;
            save(response.data.token)

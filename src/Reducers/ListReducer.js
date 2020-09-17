@@ -66,13 +66,13 @@ export default (state = INITIAL_STATE, action) => {
     
         case DELETE_ITEM_SUCCES:
          console.log('delete item succes');
-          // const newItem=action.payload.newCharacter
-        
-          return {
-            ...state,
-            loading: false,
-            characterLists:[... state.characterLists,newItem]
-          };
+         const id = action.payload
+            const newData = state.characterLists.filter((dt) => dt._id != id)
+            return {
+                ...state,
+                loadingRemoveItem: false,
+                characterLists: newData
+            };
     
         case DELETE_ITEM_FAILD:
           console.log('delete item faild')
